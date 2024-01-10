@@ -1,0 +1,27 @@
+{
+	"name": "SqlServer_OnPrem",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"ServerName": {
+				"type": "string",
+				"defaultValue": "BBP-PRO2SQL-01\\PRO2SQLLIVE"
+			},
+			"DatabaseName": {
+				"type": "string",
+				"defaultValue": "Pro2_IH"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=@{linkedService().ServerName};initial catalog=@{linkedService().DatabaseName}",
+			"userName": "svc_dynamics_baytree@platformhg.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxYjkwZGM1Yy0yOTUwLTQ3MjUtODM0Yy1kMmFhNzQyZjM3NjUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "BBP-Pro2SQL-01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

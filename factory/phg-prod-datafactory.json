@@ -1,0 +1,17 @@
+{
+	"name": "phg-prod-datafactory",
+	"properties": {
+		"globalParameters": {
+			"Environment": {
+				"type": "string",
+				"value": "PROD"
+			}
+		}
+	},
+	"location": "ukwest",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c38a0aa3-929b-4d33-bbfd-201ea50986dd",
+		"tenantId": "668364d4-3d43-4051-adbc-5bbb517a46fc"
+	}
+}

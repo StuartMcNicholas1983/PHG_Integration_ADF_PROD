@@ -2,7 +2,7 @@
 	"name": "TRG_S_8pm_Incremental",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {

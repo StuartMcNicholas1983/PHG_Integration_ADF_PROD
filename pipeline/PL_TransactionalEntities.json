@@ -394,7 +394,7 @@
 																			"type": "LinkedServiceReference"
 																		},
 																		"path": {
-																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Transactional',item().SrcSystem)",
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/',item().SrcSystem,'/Transactional')",
 																			"type": "Expression"
 																		}
 																	}
@@ -757,7 +757,7 @@
 																			"type": "LinkedServiceReference"
 																		},
 																		"path": {
-																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Transactional',item().SrcSystem)",
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/',item().SrcSystem,'/Transactional')",
 																			"type": "Expression"
 																		}
 																	}

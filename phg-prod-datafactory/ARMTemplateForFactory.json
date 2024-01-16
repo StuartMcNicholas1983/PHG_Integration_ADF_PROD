@@ -1973,6 +1973,20 @@
 																		},
 																		"enableStaging": false,
 																		"enableSkipIncompatibleRow": true,
+																		"logSettings": {
+																			"enableCopyActivityLog": true,
+																			"copyActivityLogSettings": {
+																				"logLevel": "Warning",
+																				"enableReliableLogging": false
+																			},
+																			"logLocationSettings": {
+																				"linkedServiceName": {
+																					"referenceName": "DataLake",
+																					"type": "LinkedServiceReference"
+																				},
+																				"path": "data-sync/OH_D365_DataSync/Logs/Core_A"
+																			}
+																		},
 																		"translator": {
 																			"type": "TabularTranslator",
 																			"mappings": [
@@ -4320,7 +4334,8 @@
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_OnPrem')]",
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_OnPrem_Tbl')]",
 				"[concat(variables('factoryId'), '/linkedServices/SqlServer_OnPrem')]",
-				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]"
+				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]",
+				"[concat(variables('factoryId'), '/linkedServices/DataLake')]"
 			]
 		},
 		{
@@ -4789,6 +4804,20 @@
 																		},
 																		"enableStaging": false,
 																		"enableSkipIncompatibleRow": true,
+																		"logSettings": {
+																			"enableCopyActivityLog": true,
+																			"copyActivityLogSettings": {
+																				"logLevel": "Warning",
+																				"enableReliableLogging": true
+																			},
+																			"logLocationSettings": {
+																				"linkedServiceName": {
+																					"referenceName": "DataLake",
+																					"type": "LinkedServiceReference"
+																				},
+																				"path": "data-sync/OH_D365_DataSync/Logs/Core_B"
+																			}
+																		},
 																		"translator": {
 																			"type": "TabularTranslator",
 																			"mappings": [
@@ -5753,6 +5782,20 @@
 																		"enableStaging": false,
 																		"enableSkipIncompatibleRow": true,
 																		"validateDataConsistency": false,
+																		"logSettings": {
+																			"enableCopyActivityLog": true,
+																			"copyActivityLogSettings": {
+																				"logLevel": "Warning",
+																				"enableReliableLogging": true
+																			},
+																			"logLocationSettings": {
+																				"linkedServiceName": {
+																					"referenceName": "DataLake",
+																					"type": "LinkedServiceReference"
+																				},
+																				"path": "data-sync/OH_D365_DataSync/Logs/Core_B"
+																			}
+																		},
 																		"translator": {
 																			"type": "TabularTranslator",
 																			"mappings": [
@@ -6243,6 +6286,20 @@
 																		},
 																		"enableStaging": false,
 																		"enableSkipIncompatibleRow": true,
+																		"logSettings": {
+																			"enableCopyActivityLog": true,
+																			"copyActivityLogSettings": {
+																				"logLevel": "Warning",
+																				"enableReliableLogging": true
+																			},
+																			"logLocationSettings": {
+																				"linkedServiceName": {
+																					"referenceName": "DataLake",
+																					"type": "LinkedServiceReference"
+																				},
+																				"path": "data-sync/OH_D365_DataSync/Logs/Core_B"
+																			}
+																		},
 																		"translator": {
 																			"type": "TabularTranslator",
 																			"mappings": [
@@ -7563,7 +7620,8 @@
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_OnPrem')]",
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_OnPrem_Tbl')]",
 				"[concat(variables('factoryId'), '/linkedServices/SqlServer_OnPrem')]",
-				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]"
+				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]",
+				"[concat(variables('factoryId'), '/linkedServices/DataLake')]"
 			]
 		},
 		{
@@ -21278,6 +21336,20 @@
 																		},
 																		"enableStaging": false,
 																		"enableSkipIncompatibleRow": true,
+																		"logSettings": {
+																			"enableCopyActivityLog": true,
+																			"copyActivityLogSettings": {
+																				"logLevel": "Warning",
+																				"enableReliableLogging": true
+																			},
+																			"logLocationSettings": {
+																				"linkedServiceName": {
+																					"referenceName": "DataLake",
+																					"type": "LinkedServiceReference"
+																				},
+																				"path": "data-sync/OH_D365_DataSync/Logs/Transactional"
+																			}
+																		},
 																		"translator": {
 																			"type": "TabularTranslator",
 																			"mappings": [
@@ -21625,6 +21697,20 @@
 																		},
 																		"enableStaging": false,
 																		"enableSkipIncompatibleRow": true,
+																		"logSettings": {
+																			"enableCopyActivityLog": true,
+																			"copyActivityLogSettings": {
+																				"logLevel": "Warning",
+																				"enableReliableLogging": true
+																			},
+																			"logLocationSettings": {
+																				"linkedServiceName": {
+																					"referenceName": "DataLake",
+																					"type": "LinkedServiceReference"
+																				},
+																				"path": "data-sync/OH_D365_DataSync/Logs/Transactional"
+																			}
+																		},
 																		"translator": {
 																			"type": "TabularTranslator",
 																			"mappings": [
@@ -22699,7 +22785,8 @@
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_OnPrem')]",
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_OnPrem_Tbl')]",
 				"[concat(variables('factoryId'), '/linkedServices/SqlServer_OnPrem')]",
-				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]"
+				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]",
+				"[concat(variables('factoryId'), '/linkedServices/DataLake')]"
 			]
 		},
 		{

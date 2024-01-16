@@ -2140,7 +2140,7 @@
 																			"enableCopyActivityLog": true,
 																			"copyActivityLogSettings": {
 																				"logLevel": "Warning",
-																				"enableReliableLogging": false
+																				"enableReliableLogging": true
 																			},
 																			"logLocationSettings": {
 																				"linkedServiceName": {

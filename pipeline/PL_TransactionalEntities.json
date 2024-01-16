@@ -382,6 +382,20 @@
 																},
 																"enableStaging": false,
 																"enableSkipIncompatibleRow": true,
+																"logSettings": {
+																	"enableCopyActivityLog": true,
+																	"copyActivityLogSettings": {
+																		"logLevel": "Warning",
+																		"enableReliableLogging": true
+																	},
+																	"logLocationSettings": {
+																		"linkedServiceName": {
+																			"referenceName": "DataLake",
+																			"type": "LinkedServiceReference"
+																		},
+																		"path": "data-sync/OH_D365_DataSync/Logs/Transactional"
+																	}
+																},
 																"translator": {
 																	"type": "TabularTranslator",
 																	"mappings": [
@@ -728,6 +742,20 @@
 																},
 																"enableStaging": false,
 																"enableSkipIncompatibleRow": true,
+																"logSettings": {
+																	"enableCopyActivityLog": true,
+																	"copyActivityLogSettings": {
+																		"logLevel": "Warning",
+																		"enableReliableLogging": true
+																	},
+																	"logLocationSettings": {
+																		"linkedServiceName": {
+																			"referenceName": "DataLake",
+																			"type": "LinkedServiceReference"
+																		},
+																		"path": "data-sync/OH_D365_DataSync/Logs/Transactional"
+																	}
+																},
 																"translator": {
 																	"type": "TabularTranslator",
 																	"mappings": [

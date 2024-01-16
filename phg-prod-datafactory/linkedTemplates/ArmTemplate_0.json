@@ -2147,7 +2147,10 @@
 																					"referenceName": "DataLake",
 																					"type": "LinkedServiceReference"
 																				},
-																				"path": "data-sync/OH_D365_DataSync/Logs/Core_A"
+																				"path": {
+																					"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_A',item().SrcSystem)",
+																					"type": "Expression"
+																				}
 																			}
 																		},
 																		"translator": {

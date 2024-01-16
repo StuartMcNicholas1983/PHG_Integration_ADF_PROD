@@ -393,7 +393,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Transactional"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Transactional',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {
@@ -753,7 +756,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Transactional"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Transactional',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {

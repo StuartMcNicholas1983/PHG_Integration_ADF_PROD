@@ -472,7 +472,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Core_C"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_C',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {
@@ -887,7 +890,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Core_C"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_C',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {
@@ -1225,7 +1231,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Core_C"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_C',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {
@@ -1618,7 +1627,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Core_C"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_C',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {
@@ -1945,7 +1957,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Core_C"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_C',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {
@@ -2393,7 +2408,10 @@
 																			"referenceName": "DataLake",
 																			"type": "LinkedServiceReference"
 																		},
-																		"path": "data-sync/OH_D365_DataSync/Logs/Core_C"
+																		"path": {
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_C',item().SrcSystem)",
+																			"type": "Expression"
+																		}
 																	}
 																},
 																"translator": {

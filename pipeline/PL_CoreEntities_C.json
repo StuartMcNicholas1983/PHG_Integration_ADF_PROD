@@ -2409,7 +2409,7 @@
 																			"type": "LinkedServiceReference"
 																		},
 																		"path": {
-																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/Core_C',item().SrcSystem)",
+																			"value": "@concat('data-sync/OH_D365_DataSync/Logs/',item().SrcSystem,'/Core_C')",
 																			"type": "Expression"
 																		}
 																	}

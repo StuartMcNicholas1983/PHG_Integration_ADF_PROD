@@ -1,7 +1,9 @@
 {
 	"name": "TRG_S_8pm_Incremental",
 	"properties": {
-		"annotations": [],
+		"annotations": [
+			"Sequence List: [D],[I]"
+		],
 		"runtimeState": "Started",
 		"pipelines": [
 			{

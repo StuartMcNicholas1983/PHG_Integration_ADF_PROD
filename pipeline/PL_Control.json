@@ -1012,12 +1012,38 @@
 							]
 						},
 						{
-							"value": "Incremental",
+							"value": "Daily",
 							"activities": [
+								{
+									"name": "Entity Duplicates",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "PL_EntityDuplicates",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"PipelineName": {
+												"value": "@pipeline().parameters.PipelineName",
+												"type": "Expression"
+											}
+										}
+									}
+								},
 								{
 									"name": "Control - Reset PipelineRunsToday - Incremental",
 									"type": "SqlServerStoredProcedure",
-									"dependsOn": [],
+									"dependsOn": [
+										{
+											"activity": "Entity Duplicates",
+											"dependencyConditions": [
+												"Completed"
+											]
+										}
+									],
 									"policy": {
 										"timeout": "0.12:00:00",
 										"retry": 0,
@@ -1032,60 +1058,6 @@
 									"linkedServiceName": {
 										"referenceName": "Control",
 										"type": "LinkedServiceReference"
-									}
-								}
-							]
-						},
-						{
-							"value": "Daily",
-							"activities": [
-								{
-									"name": "Daily Reset",
-									"type": "ExecutePipeline",
-									"dependsOn": [],
-									"userProperties": [],
-									"typeProperties": {
-										"pipeline": {
-											"referenceName": "PL_DailyReset",
-											"type": "PipelineReference"
-										},
-										"waitOnCompletion": true,
-										"parameters": {
-											"PipelineName": {
-												"value": "@pipeline().parameters.PipelineName",
-												"type": "Expression"
-											},
-											"LoadType": {
-												"value": "@pipeline().parameters.LoadType",
-												"type": "Expression"
-											}
-										}
-									}
-								},
-								{
-									"name": "Entity Duplicates",
-									"type": "ExecutePipeline",
-									"dependsOn": [
-										{
-											"activity": "Daily Reset",
-											"dependencyConditions": [
-												"Succeeded"
-											]
-										}
-									],
-									"userProperties": [],
-									"typeProperties": {
-										"pipeline": {
-											"referenceName": "PL_EntityDuplicates",
-											"type": "PipelineReference"
-										},
-										"waitOnCompletion": true,
-										"parameters": {
-											"PipelineName": {
-												"value": "@pipeline().parameters.PipelineName",
-												"type": "Expression"
-											}
-										}
 									}
 								}
 							]

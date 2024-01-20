@@ -670,15 +670,15 @@
 				"type": "Lookup",
 				"dependsOn": [
 					{
-						"activity": "SequenceGroup - Core_A",
+						"activity": "SG - Core_A",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "SG - Core_A",
+						"activity": "SequenceGroup - Core_A",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],

@@ -228,7 +228,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[spPopulate_PipelineParameters]"
+					"storedProcedureName": "[dbo].[spPopulate_PipelineParameters]",
+					"storedProcedureParameters": {
+						"": {
+							"value": ""
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "Control",
@@ -695,6 +700,9 @@
 				"type": "string"
 			},
 			"LoadType": {
+				"type": "string"
+			},
+			"LastTransactionalDate": {
 				"type": "string"
 			}
 		},

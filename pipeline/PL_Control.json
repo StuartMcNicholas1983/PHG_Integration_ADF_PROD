@@ -891,6 +891,10 @@
 											"LoadType": {
 												"value": "@pipeline().parameters.LoadType",
 												"type": "Expression"
+											},
+											"LastTransactionalDate": {
+												"value": "@pipeline().parameters.LastTransactionalDate",
+												"type": "Expression"
 											}
 										}
 									}

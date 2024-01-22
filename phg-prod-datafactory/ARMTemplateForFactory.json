@@ -556,7 +556,7 @@
 							{
 								"activity": "SequenceGroup - Core_C",
 								"dependencyConditions": [
-									"Succeeded"
+									"Completed"
 								]
 							}
 						],
@@ -734,7 +734,7 @@
 							{
 								"activity": "SequenceGroup - Core_A",
 								"dependencyConditions": [
-									"Succeeded"
+									"Completed"
 								]
 							}
 						],
@@ -847,7 +847,7 @@
 							{
 								"activity": "SequenceGroup - Core_B",
 								"dependencyConditions": [
-									"Succeeded"
+									"Completed"
 								]
 							}
 						],

@@ -5841,7 +5841,16 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"storedProcedureName": "[[dbo].[spPopulate_PipelineParameters]"
+							"storedProcedureName": "[[dbo].[spPopulate_PipelineParameters]",
+							"storedProcedureParameters": {
+								"dtLastTransactionalDate": {
+									"value": {
+										"value": "@formatDateTime(pipeline().parameters.LastTransactionalDate,'dd-MM-yyyy')\n\n",
+										"type": "Expression"
+									},
+									"type": "Datetime"
+								}
+							}
 						},
 						"linkedServiceName": {
 							"referenceName": "Control",
@@ -6314,6 +6323,9 @@
 						"type": "string"
 					},
 					"LoadType": {
+						"type": "string"
+					},
+					"LastTransactionalDate": {
 						"type": "string"
 					}
 				},
@@ -15276,6 +15288,10 @@
 													},
 													"LoadType": {
 														"value": "@pipeline().parameters.LoadType",
+														"type": "Expression"
+													},
+													"LastTransactionalDate": {
+														"value": "@pipeline().parameters.LastTransactionalDate",
 														"type": "Expression"
 													}
 												}

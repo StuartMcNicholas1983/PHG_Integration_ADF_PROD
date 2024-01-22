@@ -230,8 +230,12 @@
 				"typeProperties": {
 					"storedProcedureName": "[dbo].[spPopulate_PipelineParameters]",
 					"storedProcedureParameters": {
-						"": {
-							"value": ""
+						"strLastTransactionalDate": {
+							"value": {
+								"value": "@formatDateTime(pipeline().parameters.LastTransactionalDate,'yyyy-MM-dd')\n\n",
+								"type": "Expression"
+							},
+							"type": "Datetime"
 						}
 					}
 				},

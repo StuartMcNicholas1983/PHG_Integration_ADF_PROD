@@ -232,7 +232,7 @@
 					"storedProcedureParameters": {
 						"dtLastTransactionalDate": {
 							"value": {
-								"value": "@formatDateTime(pipeline().parameters.LastTransactionalDate,'yyyy-MM-dd')\n\n",
+								"value": "@formatDateTime(pipeline().parameters.LastTransactionalDate,'dd-MM-yyyy')\n\n",
 								"type": "Expression"
 							},
 							"type": "Datetime"

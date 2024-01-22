@@ -1404,6 +1404,9 @@
 					"LoadType": {
 						"type": "string",
 						"defaultValue": "Full,Incremental,Daily"
+					},
+					"LastTransactionalDate": {
+						"type": "string"
 					}
 				},
 				"variables": {

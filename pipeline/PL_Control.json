@@ -584,7 +584,7 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "LoadType2",
+						"activity": "LoadType - Post",
 						"dependencyConditions": [
 							"Completed"
 						]
@@ -1246,7 +1246,7 @@
 				}
 			},
 			{
-				"name": "LoadType2",
+				"name": "LoadType - Post",
 				"type": "Switch",
 				"dependsOn": [
 					{
@@ -1274,6 +1274,34 @@
 									"typeProperties": {
 										"pipeline": {
 											"referenceName": "PL_FullLoadReset_Post",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"PipelineName": {
+												"value": "@pipeline().parameters.PipelineName",
+												"type": "Expression"
+											},
+											"LoadType": {
+												"value": "@pipeline().parameters.LoadType",
+												"type": "Expression"
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"value": "Daily",
+							"activities": [
+								{
+									"name": "Daily Load Reset - Post",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "PL_DailyLoadReset_Post",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,

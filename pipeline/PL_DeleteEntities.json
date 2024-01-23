@@ -429,7 +429,7 @@
 												"sqlWriterUseTableLock": false
 											},
 											"enableStaging": false,
-											"enableSkipIncompatibleRow": true
+											"enableSkipIncompatibleRow": false
 										},
 										"inputs": [
 											{
@@ -831,10 +831,7 @@
 													"type": "Int32"
 												},
 												"intRowsSkipped": {
-													"value": {
-														"value": "@{activity('Destination to Config').output.rowsSkipped}",
-														"type": "Expression"
-													},
+													"value": "0",
 													"type": "Int32"
 												},
 												"intSequenceGroup": {

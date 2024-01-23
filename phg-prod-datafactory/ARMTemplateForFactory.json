@@ -969,13 +969,13 @@
 									"value": "Full",
 									"activities": [
 										{
-											"name": "Full Load Reset",
+											"name": "Full Load",
 											"type": "ExecutePipeline",
 											"dependsOn": [],
 											"userProperties": [],
 											"typeProperties": {
 												"pipeline": {
-													"referenceName": "PL_FullLoadReset",
+													"referenceName": "PL_FullLoad",
 													"type": "PipelineReference"
 												},
 												"waitOnCompletion": true,
@@ -1364,13 +1364,13 @@
 									"value": "Full",
 									"activities": [
 										{
-											"name": "Full Load Reset - Post",
+											"name": "Full Load - Post",
 											"type": "ExecutePipeline",
 											"dependsOn": [],
 											"userProperties": [],
 											"typeProperties": {
 												"pipeline": {
-													"referenceName": "PL_FullLoadReset_Post",
+													"referenceName": "PL_FullLoad_Post",
 													"type": "PipelineReference"
 												},
 												"waitOnCompletion": true,
@@ -1392,13 +1392,13 @@
 									"value": "Daily",
 									"activities": [
 										{
-											"name": "Daily Load Reset - Post",
+											"name": "Daily Load - Post",
 											"type": "ExecutePipeline",
 											"dependsOn": [],
 											"userProperties": [],
 											"typeProperties": {
 												"pipeline": {
-													"referenceName": "PL_DailyLoadReset_Post",
+													"referenceName": "PL_DailyLoad_Post",
 													"type": "PipelineReference"
 												},
 												"waitOnCompletion": true,
@@ -1469,10 +1469,10 @@
 				"[concat(variables('factoryId'), '/pipelines/PL_CoreEntities_B')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_CoreEntities_C')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_InactiveEntities')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_FullLoadReset')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_FullLoad')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_EntityDuplicates')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_FullLoadReset_Post')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_DailyLoadReset_Post')]"
+				"[concat(variables('factoryId'), '/pipelines/PL_FullLoad_Post')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_DailyLoad_Post')]"
 			]
 		},
 		{
@@ -13125,7 +13125,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/PL_FullLoadReset')]",
+			"name": "[concat(parameters('factoryName'), '/PL_FullLoad')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -13871,7 +13871,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/PL_FullLoadReset_Post')]",
+			"name": "[concat(parameters('factoryName'), '/PL_FullLoad_Post')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -23332,7 +23332,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/PL_DailyLoadReset_Post')]",
+			"name": "[concat(parameters('factoryName'), '/PL_DailyLoad_Post')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {

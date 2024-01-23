@@ -1,5 +1,5 @@
 {
-	"name": "PL_FullLoadReset_Post",
+	"name": "PL_FullLoad_Post",
 	"properties": {
 		"activities": [
 			{

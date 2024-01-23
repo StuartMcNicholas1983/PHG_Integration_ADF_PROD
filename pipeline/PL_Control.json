@@ -873,13 +873,13 @@
 							"value": "Full",
 							"activities": [
 								{
-									"name": "Full Load Reset",
+									"name": "Full Load",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "PL_FullLoadReset",
+											"referenceName": "PL_FullLoad",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
@@ -1267,13 +1267,13 @@
 							"value": "Full",
 							"activities": [
 								{
-									"name": "Full Load Reset - Post",
+									"name": "Full Load - Post",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "PL_FullLoadReset_Post",
+											"referenceName": "PL_FullLoad_Post",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
@@ -1295,13 +1295,13 @@
 							"value": "Daily",
 							"activities": [
 								{
-									"name": "Daily Load Reset - Post",
+									"name": "Daily Load - Post",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "PL_DailyLoadReset_Post",
+											"referenceName": "PL_DailyLoad_Post",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,

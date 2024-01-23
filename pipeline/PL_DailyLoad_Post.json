@@ -1,5 +1,5 @@
 {
-	"name": "PL_DailyLoadReset_Post",
+	"name": "PL_DailyLoad_Post",
 	"properties": {
 		"activities": [
 			{

@@ -86,6 +86,69 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Audit')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource",
+								"query": "<fetch top=\"5000\" >\n <entity name=\"audit\" >\n   <attribute name=\"useridname\" />\n   <attribute name=\"attributemask\" />\n   <attribute name=\"operation\" />\n   <attribute name=\"objecttypecodename\" />\n   <attribute name=\"objectid\" />\n   <attribute name=\"operationname\" />\n   <attribute name=\"transactionid\" />\n   <attribute name=\"useradditionalinfo\" />\n   <attribute name=\"regardingobjectidname\" />\n   <attribute name=\"auditid\" />\n   <attribute name=\"createdon\" />\n   <attribute name=\"userid\" />\n   <attribute name=\"callinguseridname\" />\n   <attribute name=\"regardingobjectid\" />\n   <attribute name=\"objecttypecode\" />\n   <attribute name=\"action\" />\n   <attribute name=\"actionname\" />\n   <attribute name=\"objectidname\" />\n   <attribute name=\"callinguserid\" />\n </entity>\n\n</fetch>"
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false,
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_Dataverse",
+								"type": "DatasetReference",
+								"parameters": {
+									"EntityName": "audit"
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_SQL_Control_Tbl",
+								"type": "DatasetReference",
+								"parameters": {
+									"SchemaName": "dbo",
+									"TableName": "TestAudit"
+								}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]",
+				"[concat(variables('factoryId'), '/datasets/DS_SQL_Control_Tbl')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/PL_Control')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -1747,7 +1810,7 @@
 														},
 														"intDestEntityRowCount": {
 															"value": {
-																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount\n\n\n",
+																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount",
 																"type": "Expression"
 															},
 															"type": "Int32"
@@ -4054,7 +4117,7 @@
 														},
 														"intDestEntityRowCount": {
 															"value": {
-																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount\n\n\n",
+																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount",
 																"type": "Expression"
 															},
 															"type": "Int32"
@@ -7368,7 +7431,7 @@
 											"enableCopyActivityLog": true,
 											"copyActivityLogSettings": {
 												"logLevel": "Warning",
-												"enableReliableLogging": false
+												"enableReliableLogging": true
 											},
 											"logLocationSettings": {
 												"linkedServiceName": {
@@ -8259,7 +8322,7 @@
 														},
 														"intDestEntityRowCount": {
 															"value": {
-																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount\n\n\n",
+																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount",
 																"type": "Expression"
 															},
 															"type": "Int32"
@@ -9262,7 +9325,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 HouseholdMember",
+																	"name": "PipelineAuditDetailLog_2 - HouseholdMember",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -9809,7 +9872,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 Warranty",
+																	"name": "PipelineAuditDetailLog_2 - Warranty",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -10290,7 +10353,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 Component",
+																	"name": "PipelineAuditDetailLog_2 - Component",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -10546,7 +10609,7 @@
 																			"enableCopyActivityLog": true,
 																			"copyActivityLogSettings": {
 																				"logLevel": "Warning",
-																				"enableReliableLogging": false
+																				"enableReliableLogging": true
 																			},
 																			"logLocationSettings": {
 																				"linkedServiceName": {
@@ -10892,7 +10955,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 ServiceCharge",
+																	"name": "PipelineAuditDetailLog_2 - ServiceCharge",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -11329,7 +11392,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 VulnerabilityContact",
+																	"name": "PipelineAuditDetailLog_2 - VulnerabilityContact",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -20749,7 +20812,7 @@
 														}
 													},
 													{
-														"name": "PipelineAuditDetailLog_2 EntityCodeMap",
+														"name": "PipelineAuditDetailLog_2 RefEntityCodeMap",
 														"type": "SqlServerStoredProcedure",
 														"dependsOn": [
 															{
@@ -28166,69 +28229,6 @@
 				"[concat(variables('factoryId'), '/linkedServices/DataLake')]",
 				"[concat(variables('factoryId'), '/linkedServices/SqlServer_OnPrem')]",
 				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "CommonDataServiceForAppsSource",
-								"query": "<fetch top=\"5000\" >\n <entity name=\"audit\" >\n   <attribute name=\"useridname\" />\n   <attribute name=\"attributemask\" />\n   <attribute name=\"operation\" />\n   <attribute name=\"objecttypecodename\" />\n   <attribute name=\"objectid\" />\n   <attribute name=\"operationname\" />\n   <attribute name=\"transactionid\" />\n   <attribute name=\"useradditionalinfo\" />\n   <attribute name=\"regardingobjectidname\" />\n   <attribute name=\"auditid\" />\n   <attribute name=\"createdon\" />\n   <attribute name=\"userid\" />\n   <attribute name=\"callinguseridname\" />\n   <attribute name=\"regardingobjectid\" />\n   <attribute name=\"objecttypecode\" />\n   <attribute name=\"action\" />\n   <attribute name=\"actionname\" />\n   <attribute name=\"objectidname\" />\n   <attribute name=\"callinguserid\" />\n </entity>\n\n</fetch>"
-							},
-							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false,
-								"tableOption": "autoCreate",
-								"disableMetricsCollection": false
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_Dataverse",
-								"type": "DatasetReference",
-								"parameters": {
-									"EntityName": "audit"
-								}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_SQL_Control_Tbl",
-								"type": "DatasetReference",
-								"parameters": {
-									"SchemaName": "dbo",
-									"TableName": "TestAudit"
-								}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_Dataverse')]",
-				"[concat(variables('factoryId'), '/datasets/DS_SQL_Control_Tbl')]"
 			]
 		},
 		{

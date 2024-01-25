@@ -320,7 +320,7 @@
 														},
 														"intDestEntityRowCount": {
 															"value": {
-																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount\n\n\n",
+																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount",
 																"type": "Expression"
 															},
 															"type": "Int32"
@@ -2618,7 +2618,7 @@
 														},
 														"intDestEntityRowCount": {
 															"value": {
-																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount\n\n\n",
+																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount",
 																"type": "Expression"
 															},
 															"type": "Int32"
@@ -5932,7 +5932,7 @@
 											"enableCopyActivityLog": true,
 											"copyActivityLogSettings": {
 												"logLevel": "Warning",
-												"enableReliableLogging": false
+												"enableReliableLogging": true
 											},
 											"logLocationSettings": {
 												"linkedServiceName": {
@@ -6814,7 +6814,7 @@
 														},
 														"intDestEntityRowCount": {
 															"value": {
-																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount\n\n\n",
+																"value": "@activity('Script - Entity RowCount').output.outputParameters.RowCount",
 																"type": "Expression"
 															},
 															"type": "Int32"
@@ -7817,7 +7817,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 HouseholdMember",
+																	"name": "PipelineAuditDetailLog_2 - HouseholdMember",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -8364,7 +8364,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 Warranty",
+																	"name": "PipelineAuditDetailLog_2 - Warranty",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -8845,7 +8845,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 Component",
+																	"name": "PipelineAuditDetailLog_2 - Component",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -9101,7 +9101,7 @@
 																			"enableCopyActivityLog": true,
 																			"copyActivityLogSettings": {
 																				"logLevel": "Warning",
-																				"enableReliableLogging": false
+																				"enableReliableLogging": true
 																			},
 																			"logLocationSettings": {
 																				"linkedServiceName": {
@@ -9447,7 +9447,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 ServiceCharge",
+																	"name": "PipelineAuditDetailLog_2 - ServiceCharge",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -9884,7 +9884,7 @@
 																	}
 																},
 																{
-																	"name": "PipelineAuditDetailLog_2 VulnerabilityContact",
+																	"name": "PipelineAuditDetailLog_2 - VulnerabilityContact",
 																	"type": "SqlServerStoredProcedure",
 																	"dependsOn": [
 																		{
@@ -18411,7 +18411,7 @@
 														}
 													},
 													{
-														"name": "PipelineAuditDetailLog_2 EntityCodeMap",
+														"name": "PipelineAuditDetailLog_2 RefEntityCodeMap",
 														"type": "SqlServerStoredProcedure",
 														"dependsOn": [
 															{

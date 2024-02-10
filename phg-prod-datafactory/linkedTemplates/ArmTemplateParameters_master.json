@@ -38,13 +38,13 @@
 		"TRG_S_4am_Daily_properties_PL_Control_parameters_LoadType": {
 			"value": "Daily"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_PipelineName": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_PipelineName": {
 			"value": "OH_D365_DataSync"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_SequenceList": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_SequenceList": {
 			"value": "[[C],[T]"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_LoadType": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_LoadType": {
 			"value": "Incremental"
 		},
 		"TRG_S_8pm_Incremental_properties_PL_Control_parameters_PipelineName": {

@@ -52,15 +52,15 @@
 			"type": "string",
 			"defaultValue": "Daily"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_PipelineName": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_PipelineName": {
 			"type": "string",
 			"defaultValue": "OH_D365_DataSync"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_SequenceList": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_SequenceList": {
 			"type": "string",
 			"defaultValue": "[[C],[T]"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_LoadType": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_LoadType": {
 			"type": "string",
 			"defaultValue": "Incremental"
 		},
@@ -161,14 +161,14 @@
 					"TRG_S_4am_Daily_properties_PL_Control_parameters_LoadType": {
 						"value": "[parameters('TRG_S_4am_Daily_properties_PL_Control_parameters_LoadType')]"
 					},
-					"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_PipelineName": {
-						"value": "[parameters('TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_PipelineName')]"
+					"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_PipelineName": {
+						"value": "[parameters('TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_PipelineName')]"
 					},
-					"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_SequenceList": {
-						"value": "[parameters('TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_SequenceList')]"
+					"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_SequenceList": {
+						"value": "[parameters('TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_SequenceList')]"
 					},
-					"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_LoadType": {
-						"value": "[parameters('TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_LoadType')]"
+					"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_LoadType": {
+						"value": "[parameters('TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_LoadType')]"
 					},
 					"TRG_S_8pm_Incremental_properties_PL_Control_parameters_PipelineName": {
 						"value": "[parameters('TRG_S_8pm_Incremental_properties_PL_Control_parameters_PipelineName')]"

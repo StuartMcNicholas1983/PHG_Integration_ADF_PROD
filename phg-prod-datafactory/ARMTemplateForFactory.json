@@ -52,15 +52,15 @@
 			"type": "string",
 			"defaultValue": "Daily"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_PipelineName": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_PipelineName": {
 			"type": "string",
 			"defaultValue": "OH_D365_DataSync"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_SequenceList": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_SequenceList": {
 			"type": "string",
 			"defaultValue": "[[C],[T]"
 		},
-		"TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_LoadType": {
+		"TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_LoadType": {
 			"type": "string",
 			"defaultValue": "Incremental"
 		},
@@ -29024,7 +29024,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/TRG_S_7am_to_5pm_Incremental')]",
+			"name": "[concat(parameters('factoryName'), '/TRG_S_7am_to_7pm_Incremental')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -29039,9 +29039,9 @@
 							"type": "PipelineReference"
 						},
 						"parameters": {
-							"PipelineName": "[parameters('TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_PipelineName')]",
-							"SequenceList": "[parameters('TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_SequenceList')]",
-							"LoadType": "[parameters('TRG_S_7am_to_5pm_Incremental_properties_PL_Control_parameters_LoadType')]"
+							"PipelineName": "[parameters('TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_PipelineName')]",
+							"SequenceList": "[parameters('TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_SequenceList')]",
+							"LoadType": "[parameters('TRG_S_7am_to_7pm_Incremental_properties_PL_Control_parameters_LoadType')]"
 						}
 					}
 				],
@@ -29067,7 +29067,9 @@
 								13,
 								14,
 								15,
-								16
+								16,
+								17,
+								18
 							]
 						}
 					}

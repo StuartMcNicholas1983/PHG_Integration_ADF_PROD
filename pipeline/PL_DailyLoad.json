@@ -24,7 +24,7 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Switch",
+						"activity": "SourceSystem",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -126,7 +126,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Switch",
+						"activity": "SourceSystem",
 						"dependencyConditions": [
 							"Failed"
 						]
@@ -322,8 +322,8 @@
 				}
 			},
 			{
-				"name": "Switch",
-				"type": "Switch",
+				"name": "Control - Reset PipelineRunsToday - Incremental",
+				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
 						"activity": "PipelineAuditLog - Start",
@@ -332,16 +332,84 @@
 						]
 					}
 				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"on": {
-						"value": "@pipeline().parameters.LoadType",
+					"storedProcedureName": "[dbo].[spUpdate_PipelineParameters_PipelineRunsToday]"
+				},
+				"linkedServiceName": {
+					"referenceName": "Control",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "SourceSystems",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Control - Reset PipelineRunsToday - Incremental",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[dbo].[spGet_PipelineParameters_SourceSystems]",
+						"storedProcedureParameters": {
+							"pipeline": {
+								"type": "String",
+								"value": {
+									"value": "@pipeline().parameters.PipelineName",
+									"type": "Expression"
+								}
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SQL_Control",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "SourceSystem",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "SourceSystems",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('SourceSystems').output.value\n",
 						"type": "Expression"
 					},
-					"cases": [],
-					"defaultActivities": [
+					"isSequential": true,
+					"activities": [
 						{
-							"name": "Control - Reset PipelineRunsToday - Incremental",
+							"name": "Delete AuditLog",
 							"type": "SqlServerStoredProcedure",
 							"dependsOn": [],
 							"policy": {
@@ -353,11 +421,21 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"storedProcedureName": "[dbo].[spUpdate_PipelineParameters_PipelineRunsToday]"
+								"storedProcedureName": "[adf].[spDelete_adf_AuditLog]"
 							},
 							"linkedServiceName": {
-								"referenceName": "Control",
-								"type": "LinkedServiceReference"
+								"referenceName": "SqlServer_OnPrem",
+								"type": "LinkedServiceReference",
+								"parameters": {
+									"ServerName": {
+										"value": "@item().SrcServer",
+										"type": "Expression"
+									},
+									"DatabaseName": {
+										"value": "@item().srcDatabase",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]

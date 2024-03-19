@@ -386,7 +386,8 @@
 					"dataset": {
 						"referenceName": "DS_SQL_Control",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
